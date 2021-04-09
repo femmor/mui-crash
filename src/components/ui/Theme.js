@@ -17,8 +17,17 @@ export default createMuiTheme({
     }
   },
   typography: {
+    tab: {
+      textTransform: "none",
+      fontWeight: 700,
+      fontSize: "1rem",
+    },
     h3: {
       fontWeight: 300,
+    },
+    estimate: {
+      fontSize: "1rem",
+      textTransform: "none"
     }
   }
 })

@@ -2,6 +2,7 @@ import React, { cloneElement, useState } from 'react'
 import {AppBar, Button, Toolbar, useScrollTrigger} from "@material-ui/core"
 import {makeStyles} from '@material-ui/styles'
 import {Tabs, Tab} from "@material-ui/core"
+import {Link} from "react-router-dom"
 
 import logo from "../../assets/logo.svg"
 
@@ -63,13 +64,13 @@ const Header = (props) => {
           <Toolbar disableGutters>
             <img src={logo} alt="Company Logo" className={classes.logo}/>
             <Tabs value={value} onChange={handleTabChange} className={classes.tabContainer}>
-              <Tab className={classes.tab} label="Home"/>
-              <Tab className={classes.tab} label="Services"/>
-              <Tab className={classes.tab} label="The Revolution"/>
-              <Tab className={classes.tab} label="About Us"/>
-              <Tab className={classes.tab} label="Contact Us"/>
+              <Tab className={classes.tab} component={Link} to="/" label="Home"/>
+              <Tab className={classes.tab} component={Link} to="/services" label="Services"/>
+              <Tab className={classes.tab} component={Link} to="/revolution" label="The Revolution"/>
+              <Tab className={classes.tab} component={Link} to="/about" label="About Us"/>
+              <Tab className={classes.tab} component={Link} to="/contact" label="Contact Us"/>
             </Tabs>
-            <Button variant="contained" color="secondary" className={classes.button}>Free Estimate</Button>
+            <Button variant="contained" color="secondary" component={Link} to="/estimate" className={classes.button}>Free Estimate</Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
