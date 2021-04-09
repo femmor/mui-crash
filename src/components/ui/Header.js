@@ -1,5 +1,5 @@
 import React, { cloneElement, useState } from 'react'
-import {AppBar, Toolbar, useScrollTrigger} from "@material-ui/core"
+import {AppBar, Button, Toolbar, useScrollTrigger} from "@material-ui/core"
 import {makeStyles} from '@material-ui/styles'
 import {Tabs, Tab} from "@material-ui/core"
 
@@ -19,11 +19,17 @@ const useStyles = makeStyles(theme => ({
     marginRight: "1rem"
   },
   tab: {
-    textTransform: "none",
-    fontWeight: 700,
-    fontSize: "1rem",
+    ...theme.typography.tab,
     minWidth: 10,
     marginLeft: "25px"
+  },
+  button: { 
+    ...theme.typography.estimate,
+    color: 'white',
+    borderRadius: '50px',
+    marginLeft: '15px',
+    marginRight: "20px",
+    height: '45px'
   }
 }))
 
@@ -63,6 +69,7 @@ const Header = (props) => {
               <Tab className={classes.tab} label="About Us"/>
               <Tab className={classes.tab} label="Contact Us"/>
             </Tabs>
+            <Button variant="contained" color="secondary" className={classes.button}>Free Estimate</Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
